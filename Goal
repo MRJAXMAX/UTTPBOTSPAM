@@ -1,0 +1,112 @@
+📛 YouTube Troll Swarm Spam Detection — Unicode Obfuscation in the Wild
+
+🚨 Summary
+This repository documents and analyzes a coordinated troll and bot spam campaign active on YouTube as of July 2025. These bots leverage Unicode control characters (specifically U+202E Right-to-Left Override) to obfuscate key phrases and evade automated spam detection systems.
+
+📌 What’s Happening?
+We are observing dozens of bot accounts, often with "UTTP" in the name (e.g., @UTTPColonelJack, @UTubeTrollPoliceCapt), posting near-identical spam comments on unrelated YouTube videos.
+
+Example Comment (Raw):
+plaintext
+Copy
+Edit
+1ST WARNING TROLL! MY VIDEO lS BETTER THAN THIS lNCOHERENT& SOULLESS GPOLSYO
+UTTP'S FAR BETTER THAN WHATEVER THIS NONSENSE IS...
+Decoded Unicode:
+The string GPOLSYO uses the U+202E character to reverse text direction, causing "POLSYO" to render backwards.
+
+When rendered and reversed properly, it becomes something like:
+
+nginx
+Copy
+Edit
+OYSLPOG
+This could be a scrambled version of:
+
+“GO PSYLOP”
+
+“PSYOP LOG”
+
+or just nonsense used to confuse filters.
+
+These messages are being spam-posted by dozens of bot accounts, often replying to unrelated or trending content.
+
+⚠️ Why It Matters
+Evasion of Moderation: These bots evade YouTube's moderation filters using obscure Unicode characters designed for RTL language rendering (Arabic, Hebrew).
+
+Mass Psychological Spam: The repeated use of "1ST WARNING TROLL!" and militarized usernames implies a manufactured authority — part of an online psyop mimicry or intimidation attempt.
+
+Trolling-as-a-Service (TaaS): The pattern and scale suggest these may be commercial spam tools or troll networks, possibly monetizing fake engagement or harassment campaigns.
+
+🔬 Technical Breakdown
+U+202E (Right-to-Left Override):
+
+Injected mid-word to reverse rendering of suspicious phrases.
+
+Not visible in normal YouTube interfaces.
+
+Easily bypasses string-matching spam filters.
+Message Pattern:
+
+plaintext
+Copy
+Edit
+"1ST WARNING TROLL! MY VIDEO IS BETTER THAN THIS INCOHERENT & SOULLESS [OBFUSCATED PHRASE]"
+"UTTP'S FAR BETTER THAN WHATEVER THIS NONSENSE IS..."
+Account Pattern:
+
+Freshly created
+
+All caps names
+
+Military-style ranks (Captain, Colonel)
+
+Prefixes like "UTTP", "TrollPolice", "YTProtect"
+
+🔧 Mitigation Proposal
+GitHub Tooling (Optional Future Work):
+
+Node/Python script to detect U+202E in YouTube comment exports or scraped threads.
+
+Regex flag for \u202e and inverted phrase rendering.
+
+YouTube Feature Request:
+
+Flag and strip control characters like U+202E unless in RTL language contexts.
+
+Offer a “Unicode sanitation” toggle for comments.
+
+Enable community moderation tags like #ObfuscatedSpam.
+
+Community Coordination:
+
+Document known spam accounts.
+
+Encourage creators to scan comments using the detection tool.
+
+Submit reports via YouTube’s Creator Support Form.
+
+📁 Evidence Archive
+Account    Timestamp    Message
+@UTTPColonelJack    2025-07-28 13:04    1ST WARNING TROLL!... GPOLSYO
+@ReturnOfKave    2025-07-28 13:06    I'm better than penguinz0 LMAO
+@UTubeTrollPoliceCapt    2025-07-28 13:07    Repeated above message
+(More to be added...)
+
+🧠 Goals of This Repo
+Publicly expose this spam ring
+
+Share mitigation strategies
+
+Collaborate on tooling and detection
+
+Pressure YouTube to improve moderation tools
+
+💬 Contributing
+If you spot similar messages or accounts, post a comment or open a PR with evidence.
+
+Devs welcome: Let's make a browser extension or comment sanitizer.
+
+🧷 License
+This is an open-source awareness campaign. Use freely, cite sources.
+Newest project is tracking these bots

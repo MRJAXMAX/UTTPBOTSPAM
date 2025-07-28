@@ -51,28 +51,6 @@ All caps + "UTTP" prefix
 
 Repeat same message across videos
 
-📁 File Structure
-
-File
-
-Description
-
-Goal
-
-Core mission and purpose
-
-Examples/
-
-Screenshots and raw comment captures
-
-Analysis/
-
-Unicode breakdowns and pattern detection
-
-Accounts/
-
-Known spam bot usernames (to blacklist)
-
 ⚔️ Next Steps
 
 Document every unique bot account name seen.
